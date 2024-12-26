@@ -6,7 +6,7 @@ node{
     echo "Testing"
   }
 
-  if(currentBuild.result=='SUCCESS'){
+  if(currentBuild.result=="SUCCESS"){
     echo "Looks Good"
   }else{
     echo "FAIL"

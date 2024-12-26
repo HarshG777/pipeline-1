@@ -1,6 +1,7 @@
 node{
   stage('Build'){
     echo "Building"
+    currentBuild.result = 'SUCCESS'
   }
   stage('Test'){
     echo "Testing"

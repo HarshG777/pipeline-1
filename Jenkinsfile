@@ -1,40 +1,14 @@
-pipeline{
-  agent any
-  stages{
-    stage('Breakfast'){
-      steps{
-        echo "Having Breakfast"
-      }
-    }
-    stage('Workout'){
-      steps{
-        echo "Going for workout"
-      }
-    }
-    stage('Study'){
-      steps{
-        echo "Doing Study"
-      }
-    }
-    stage("Familytime"){
-      steps{
-        echo "Having familytime"
-      }
-    }
-    stage("Playing"){
-      steps{
-        echo "Playing"
-      }
-    }
+node{
+  stage('Build'){
+    echo "Building"
   }
-  post{
-    success{
-      echo  "Success"
-    }
-    failure{
-      echo "Fail"
-    }
+  stage('Test'){
+    echo "Testing"
+  }
+
+  if(currentBuild.result=='SUCCESS'){
+    echo "Looks Good"
+  }else{
+    echo "FAIL"
   }
 }
-
-
